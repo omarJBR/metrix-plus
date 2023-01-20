@@ -1,0 +1,26 @@
+<div class="login__container">
+
+    <img class="logo__iamge" src="assets/images/logo.png" alt="">
+
+    <div class="sub__login__container">
+        <div class="main__text__container">
+            <span>Log In</span>
+        </div>
+
+        <div class="sub__text__container">
+            Welcome to Metrix Plus
+        </div>
+
+        <form class="form__container" [formGroup]="loginForm">
+            <input class="input__field" placeholder="Email" type="text" formControlName="email">
+
+            <input class="input__field" placeholder="Password" type="password" formControlName="password">
+
+            <div class="error__text" *ngIf="invalidCreds">
+                <span>The email or password is wrong!</span>
+            </div>
+
+            <button class="login__button" [disabled]="!loginForm.valid" (click)="login()">Log In</button>
+        </form>
+    </div>
+</div>
